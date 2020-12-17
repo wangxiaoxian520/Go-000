@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package ="Go-000/Week04/api";
+
+package api;
+
+service GetUser{
+    rpc GetUserById (GetUserByIdRequest) returns (GetUserByIdResponse);
+}
+
+message GetUserByIdRequest{
+    int32 id=1 ;
+}
+
+message GetUserByIdResponse{
+    string name=1;
+    int32 age=2;
+    string addr=3;
+}
