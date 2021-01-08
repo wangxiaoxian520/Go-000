@@ -36,7 +36,6 @@ func (s *Server) GetUserById(ctx context.Context, req *pb.GetUserByIdRequest) (*
 		if errors.Is(err, data.ErrNotFound) {
 			return nil, errors.Unwrap(err)
 		}
-		fmt.Println(err)
 		return nil, err
 	}
 	reply := &pb.GetUserByIdResponse{

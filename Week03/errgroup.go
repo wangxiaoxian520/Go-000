@@ -52,6 +52,31 @@ func main() {
 		close(stop)
 	}()
 
+	//上周作业修改
+	// 	g, ctx := errgroup.WithContext(context.Background())
+	// s := http.Server{Addr: "127.0.0.1:8080"}
+	// g.Go(func() error {
+	// 	g.Go(func() error {
+	// 		<-ctx.Done()
+	// 		fmt.Println("server closed")
+	// 		return s.Shutdown(context.TODO()) //
+	// 	})
+	// 	return s.ListenAndServe()
+	// })
+
+	// sigs := make(chan os.Signal)
+	// signal.Notify(sigs, syscall.SIGHUP, syscall.SIGQUIT, syscall.SIGTERM, os.Interrupt)
+	// g.Go(func() error {
+	// 	select {
+	// 	case <-ctx.Done():
+	// 		fmt.Println("ctx cancel")
+	// 		return ctx.Err()
+	// 	case <-sigs:
+	// 		fmt.Println(<-sigs)
+	// 		return errors.New("singal closed")
+	// 	}
+
+	// })
 	if err := g.Wait(); err != nil {
 		fmt.Printf("gorutine退出原因:%v\n", err)
 	}
